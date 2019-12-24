@@ -1,0 +1,16 @@
+a.mat-tab-link {
+    color:rgb(166, 23, 233) !important;
+    background-color: white !important;
+}
+
+/* active tab */
+a.mat-tab-link.mat-tab-label-active {
+    color:rgb(166, 23, 233) !important;
+    /* background-color: green !important; */
+}
+    
+/* ink bar */
+.mat-ink-bar {
+    background-color: rgb(166, 23, 233) !important;
+    height: 20px;
+}

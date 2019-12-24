@@ -1,16 +1,24 @@
 <html>
 <div class="container-fluid" style="position: fixed; top: 0; background-color: white;">
   <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-3" style="padding-top: 30px; padding-left: 3%;">
+    <div class="col-6 col-xs-6 col-sm-4 col-md-3" style="padding-top: 30px; padding-left: 3%;">
       <h5 style="color: #1f1f1f;">Real Estate
         <br /><em style="color: #1f1f1f; font-style: normal; font-size: 15px;">A l l &nbsp; F o r &nbsp; O n e</em>
         <br />
       </h5>
     </div>
   </div>
+  <div class="row">
+    <nav mat-tab-nav-bar style="border: none;">
+      <a class="col-4 col-xs-4 col-sm-4 col-md-3" mat-tab-link *ngFor="let link of navLink" 
+      [routerLink]="link.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" style="text-decoration: none;">
+        {{link.label}}
+      </a>
+    </nav>
+  </div>
 </div>
 
-<div style="margin-top: 80px; background-color: gray;">
+<div style="margin-top: 200px; background-color: gray;">
   <router-outlet></router-outlet>
 </div>
 
