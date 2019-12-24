@@ -11,6 +11,5 @@ a.mat-tab-link.mat-tab-label-active {
     
 /* ink bar */
 .mat-ink-bar {
-    background-color: rgb(166, 23, 233) !important;
-    height: 20px;
+    background-color: rgb(166, 23, 233) !important;    
 }
