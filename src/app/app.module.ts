@@ -6,21 +6,25 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { RentInfoComponent } from './rent-info/rent-info.component';
-import { NewsComponent } from './news/news.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { SendMeComponent } from './send-me/send-me.component';
+import {
+  MatFormFieldModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RentInfoComponent,
-    NewsComponent
+    SendMeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

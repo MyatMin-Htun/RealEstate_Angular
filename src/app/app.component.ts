@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
         link: './rentInfo',
         index: 1
       }, {
-        label: 'New',
-        link: './news',
+        label: 'Send Me',
+        link: './sendInfo',
         index: 2
       }
     ];
