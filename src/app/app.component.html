@@ -1,5 +1,6 @@
 <html>
-<div class="container-fluid" style="position: fixed; top: 0; background-color: white;">
+<!-- z-index: 1 to make div tag under index 1 go under this tag -->
+<div class="container-fluid" style="position: fixed; top: 0; background-color: white; z-index: 1;">
   <div class="row">
     <div class="col-6 col-xs-6 col-sm-4 col-md-3" style="padding-top: 30px; padding-left: 3%;">
       <h5 style="color: #1f1f1f;">Real Estate
@@ -10,15 +11,15 @@
   </div>
   <div class="row">
     <nav mat-tab-nav-bar style="border: none;">
-      <a class="col-4 col-xs-4 col-sm-4 col-md-3" mat-tab-link *ngFor="let link of navLink" 
-      [routerLink]="link.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" style="text-decoration: none;">
+      <a class="col-4 col-xs-4 col-sm-4 col-md-3" mat-tab-link *ngFor="let link of navLink" [routerLink]="link.link"
+        routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" style="text-decoration: none;">
         {{link.label}}
       </a>
     </nav>
   </div>
 </div>
 
-<div style="margin-top: 120px; background-color: gray;">
+<div style="padding-top: 110px; background-color: gray; z-index: -1;">
   <router-outlet></router-outlet>
 </div>
 

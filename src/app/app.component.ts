@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None         // to change Tab menu color and active link color
+  encapsulation: ViewEncapsulation.None         // allow material attribute to redesign
 })
 export class AppComponent implements OnInit {
   title = 'RealEstate';

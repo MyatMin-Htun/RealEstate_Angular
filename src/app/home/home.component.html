@@ -1,18 +1,47 @@
 <br />
 
 <div class="container-fluid">
-    <div class="row">
-        <form class="example-form">
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Favorite food" value="Sushi">
-            </mat-form-field>
+    <form>
+        <div class="row" style="background-color: white; padding-top: 15px; z-index: 0;">
+            <div class="col-12 col-xs-12 col-sm-4 col-md-3">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="Enter City" style="width: 100%;" [(ngModel)]='txtCity'
+                        name="searchGroup">
+                    <mat-error *ngIf="!txtCity">Input required*</mat-error>
+                </mat-form-field>
+            </div>
 
-            <mat-form-field class="example-full-width">
-                <textarea matInput placeholder="Leave a comment"></textarea>
-            </mat-form-field>
-        </form>
-    </div>
+            <div class="col-12 col-xs-12 col-sm-4 col-md-3">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Township</mat-label>
+                    <input matInput placeholder="Enter Township" style="width: 100%;" [(ngModel)]='txtTownship'
+                        name="searchGroup">
+                    <mat-error *ngIf="!txtCity">Input required*</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="col-12 col-xs-12 col-sm-4 col-md-3">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Country</mat-label>
+                    <input matInput placeholder="Enter Country" style="width: 100%;" [(ngModel)]='txtCountry'
+                        name="searchGroup">
+                    <mat-error *ngIf="!txtCity">Input required*</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="col-12 col-xs-12 col-sm-4 col-md-3">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Search by Keyword</mat-label>
+                    <input matInput placeholder="Enter Key" style="width: 100%;" [(ngModel)]='txtKey'
+                        name="searchGroup">
+                    <mat-error *ngIf="!txtCity">Input required*</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
 </div>
+<div>go under</div>
 <p>home works! 123</p>
 <p>home works!</p>
 <p>home works!</p>
