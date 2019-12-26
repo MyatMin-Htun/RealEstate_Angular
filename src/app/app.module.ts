@@ -12,7 +12,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {
   MatFormFieldModule,
   MatInputModule,
-  MatButtonModule
+  MatButtonModule,
+  MatExpansionModule,
+  MatChipsModule
 } from '@angular/material';
 
 @NgModule({
@@ -30,7 +32,9 @@ import {
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

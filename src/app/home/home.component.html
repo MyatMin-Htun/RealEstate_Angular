@@ -1,59 +1,87 @@
 <br />
 
-<div class="container-fluid">
-    <form>
-        <div class="row" style="background-color: white; padding-top: 15px; z-index: 0;">
-            <div class="col-6 col-xs-6 col-sm-6 col-md-6">
-                <br /><br />
-                <mat-label style="color: #555555;">
-                    <h6>Search by Keyword</h6>
+<div class="container-fluid" style="background-color: white;">
+    <div class="col-md-10 offset-md-1">
+        <form>
+            <div class="row" style="background-color: white; padding-top: 15px; padding-bottom: 15px; z-index: 0;">
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6">
+                    <br /><br />
+                    <mat-label style="color: #555555;">
+                        <h6>Search by Keyword</h6>
+                    </mat-label>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <input matInput placeholder="Enter Key" style="width: 100%;" [(ngModel)]='txtKey'
+                            name="searchGroup">
+                    </mat-form-field>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6">
+                    <br /><br />
+                    <mat-label style="color: #555555;">
+                        <h6>Price&nbsp;&nbsp;&nbsp;
+                            <span style="color: red;"
+                                [hidden]="!this.errorMessage"><i>{{ this.errorMessage }}</i></span></h6>
+                    </mat-label>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <input matInput placeholder="Enter Price" style="width: 100%;" [(ngModel)]='txtPrice'
+                            type="number" name="searchGroup" #txtPriceInput>
+                    </mat-form-field>
+                </div>
+
+                <mat-label class="col-12 col-xs-12 col-sm-12 col-md-12" style="color: #555555;">
+                    <h6>Additional Information</h6>
                 </mat-label>
-                <mat-form-field appearance="outline" style="width: 100%;">
-                    <input matInput placeholder="Enter Key" style="width: 100%;" [(ngModel)]='txtKey'
-                        name="searchGroup">
-                </mat-form-field>
-            </div>
-            <div id="lblPrice" class="col-6 col-xs-6 col-sm-6 col-md-6">
-                <br /><br />
-                <mat-label style="color: #555555;">
-                    <h6>Price&nbsp;&nbsp;&nbsp;
-                        <span style="color: red;" [hidden]="!this.errorMessage"><i>{{ this.errorMessage }}</i></span></h6>
-                </mat-label>
-                <mat-form-field appearance="outline" style="width: 100%;">
-                    <input matInput placeholder="Enter Price" style="width: 100%;" [(ngModel)]='txtPrice' type="number"
-                        name="searchGroup" #txtPriceInput>
-                </mat-form-field>
-            </div>
+                <div class="col-12 col-xs-12 col-sm-4 col-md-4">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="Enter City" style="width: 100%;" [(ngModel)]='txtCity'
+                            name="searchGroup">
+                    </mat-form-field>
+                </div>
 
-            <div class="col-12 col-xs-12 col-sm-4 col-md-4">
-                <mat-form-field appearance="outline" style="width: 100%;">
-                    <mat-label>City</mat-label>
-                    <input matInput placeholder="Enter City" style="width: 100%;" [(ngModel)]='txtCity'
-                        name="searchGroup">
-                </mat-form-field>
-            </div>
+                <div class="col-12 col-xs-12 col-sm-4 col-md-4">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Township</mat-label>
+                        <input matInput placeholder="Enter Township" style="width: 100%;" [(ngModel)]='txtTownship'
+                            name="searchGroup">
+                    </mat-form-field>
+                </div>
 
-            <div class="col-12 col-xs-12 col-sm-4 col-md-4">
-                <mat-form-field appearance="outline" style="width: 100%;">
-                    <mat-label>Township</mat-label>
-                    <input matInput placeholder="Enter Township" style="width: 100%;" [(ngModel)]='txtTownship'
-                        name="searchGroup">
-                </mat-form-field>
-            </div>
+                <div class="col-12 col-xs-12 col-sm-4 col-md-4">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Country</mat-label>
+                        <input matInput placeholder="Enter Country" style="width: 100%;" [(ngModel)]='txtCountry'
+                            name="searchGroup">
+                    </mat-form-field>
+                </div>
 
-            <div class="col-12 col-xs-12 col-sm-4 col-md-4">
-                <mat-form-field appearance="outline" style="width: 100%;">
-                    <mat-label>Country</mat-label>
-                    <input matInput placeholder="Enter Country" style="width: 100%;" [(ngModel)]='txtCountry'
-                        name="searchGroup">
-                </mat-form-field>
-            </div>
+                <mat-expansion-panel class="mat-elevation-z0" style="width: 100%;" [hidden]="!panelSearchMoreField"
+                    [expanded]="panelSearchMoreField">
+                    <mat-label class="col-12 col-xs-12 col-sm-12 col-md-12" style="color: #555555; padding: 0;">
+                        <h6>Additional Information</h6>
+                    </mat-label>
+                    <div style="padding-left: 20px; width: 100%;">
+                        <mat-chip-list class="offset-1 offset-xs-3 offset-sm-3 offset-md-3" [multiple]="true" aria-label="Category1">
+                            <mat-chip class="col-4 col-xs-4 col-sm-3 col-md-3" *ngFor="let data of moreField"
+                                color="primary" [selected]="data.selected" (click)="addSelected(data)">
+                                <i class="material-icons">{{data.icon}}</i>&nbsp;{{data.value}}
+                            </mat-chip>
+                        </mat-chip-list>
+                    </div>
+                </mat-expansion-panel>
 
-            <div class="col-12 col-xs-12 col-sm-4 col-md-4">
-                <button mat-stroked-button (click)="searchRentInfo()">Search</button>
+                <div class="col-12 col-xs-12 col-sm-4 col-md-4 offset-sm-4 offset-md-4" style="padding-top: 15px;">
+                    <button mat-flat-button style="width: 100%; background-color: #42a5f5; color: white;"
+                        (click)="searchRentInfo()">Search</button>
+                </div>
+
+                <div class="col-12 col-xs-12 col-sm-4 col-md-4" style="padding-top: 15px;">
+                    <button mat-stroked-button style="width: 100%; border-color: #42a5f5; color: #42a5f5;"
+                        (click)="displayMoreField()"><i
+                            class="material-icons">{{displayMore.icon}}</i>&nbsp;&nbsp;{{this.displayMore.value}}</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 <div>go under</div>
 <p>home works! 123</p>
