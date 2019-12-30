@@ -14,12 +14,6 @@ export class RentInfoComponent implements OnInit {
   constructor(private location: Location) { }
 
   ngOnInit() {
-    // catch Data from HomeComponent
-    // if (history.state) {
-    //   this.searchKey = history.state;
-    //   this.dummyDisplayData = JSON.stringify(this.searchKey);
-    // }
-
     // get Data from History.state using Angular Location
     this.searchKey = this.location.getState();
     // if searchKey length is more than one (with Data)
