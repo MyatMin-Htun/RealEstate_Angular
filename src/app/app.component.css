@@ -13,3 +13,11 @@ a.mat-tab-link.mat-tab-label-active {
 .mat-ink-bar {
     background-color: rgb(166, 23, 233) !important;    
 }
+
+.footerButton {
+    color: #c2c2c2;
+}
+
+.footerButton:hover {
+    color: white;
+}

@@ -3,10 +3,10 @@
 <div class="container-fluid" style="position: fixed; top: 0; background-color: white; z-index: 1;">
   <div class="row">
     <div class="col-6 col-xs-6 col-sm-4 col-md-3" style="padding-top: 30px; padding-left: 3%;">
-      <h5 style="color: #1f1f1f;">Real Estate
+      <a [routerLink]="['/home']" style="text-decoration: none;"><h5 style="color: #1f1f1f; border: none;">BestStay
         <br /><em style="color: #1f1f1f; font-style: normal; font-size: 15px;">A l l &nbsp; F o r &nbsp; O n e</em>
         <br />
-      </h5>
+      </h5></a>
     </div>
   </div>
   <div class="row">
@@ -21,6 +21,46 @@
 
 <div style="padding-top: 110px; background-color: gray; z-index: -1;">
   <router-outlet></router-outlet>
+</div>
+
+<!-- footer starts here -->
+<div class="container-fluid" style="background-color: #1f1f1f;">
+
+  <div class="row" style="padding-top: 5%; padding-bottom: 5%;">
+    <div class="col-sm-2 col-md-2">
+
+    </div>
+    <div class="col-12 col-xs-12 col-sm-5 col-md-5">
+      <div class="col-12 col-xs-12 col-sm-12 col-md-12" style="padding-top: 30px; padding-left: 3%;">
+        <h5 style="color: white;">BestStay
+          <br /><em style="color: #c2c2c2; font-style: normal; font-size: 15px;">A l l &nbsp; F o r &nbsp; O n e</em>
+          <br />
+          <p style="color: #c2c2c2; font-size: 12px;">Copyright ©2019 | All Rights Reserved</p>
+        </h5>
+      </div>
+
+
+      <!-- <div class="card" style="background-color: #1f1f1f; border: none;">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #ffffff;">Amad
+            <br /><em style="color: #c2c2c2; font-style: normal; font-size: 15px;">F u r n i t u r e</em>
+            <br>
+          </h5>
+          <p class="card-text" style="color: #c2c2c2; font-size: 12px;">Copyright ©2019 | All Rights Reserved
+          </p>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="col-12 col-xs-12 col-sm-5 col-md-5" style="display: flex; flex-direction: column; padding-top: 3%;">
+      <form id="frmSubscribe" style="vertical-align: middle;">
+        <button mat-button matSuffix routerLink="/contactUs"
+          class="col-12 col-xs-6 col-sm-4 col-md-4 footerButton">Contact us</button>
+        <button mat-button matSuffix routerLink="/aboutUs"
+          class="col-12 col-xs-6 col-sm-4 col-md-4 footerButton">About us</button>
+      </form>
+    </div>
+  </div>
 </div>
 
 </html>

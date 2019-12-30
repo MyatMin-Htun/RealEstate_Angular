@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { RentInfoComponent } from './rent-info/rent-info.component';
 import { SendMeComponent } from './send-me/send-me.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import {
@@ -22,7 +24,9 @@ import {
     AppComponent,
     HomeComponent,
     RentInfoComponent,
-    SendMeComponent
+    SendMeComponent,
+    ContactUsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
