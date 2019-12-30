@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { SearchField } from './searchField.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +31,7 @@ export class HomeComponent implements OnInit {
   choseField: string[] = [];                  // chosen field data from search form
   searchKey: SearchField;
 
-  constructor() {
+  constructor(private router: Router) {
     this.searchKey = new SearchField();
   }
 
@@ -84,6 +85,8 @@ export class HomeComponent implements OnInit {
       this.addKeyValue(this.choseField, 'choseField');
 
       console.log(this.searchKey);
+      // navigate to rent-info with Data
+      this.router.navigateByUrl('/rentInfo', { state: this.searchKey });
     }
   }
 

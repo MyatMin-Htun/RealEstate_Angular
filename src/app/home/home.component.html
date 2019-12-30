@@ -60,7 +60,8 @@
                         <h6>Additional Information</h6>
                     </mat-label>
                     <div style="padding-left: 20px; width: 100%;">
-                        <mat-chip-list class="offset-1 offset-xs-3 offset-sm-3 offset-md-3" [multiple]="true" aria-label="Category1">
+                        <mat-chip-list class="offset-1 offset-xs-3 offset-sm-3 offset-md-3" [multiple]="true"
+                            aria-label="Category1">
                             <mat-chip class="col-4 col-xs-4 col-sm-3 col-md-3" *ngFor="let data of moreField"
                                 color="primary" [selected]="data.selected" (click)="addSelected(data)">
                                 <i class="material-icons">{{data.icon}}</i>&nbsp;{{data.value}}
@@ -70,7 +71,7 @@
                 </mat-expansion-panel>
 
                 <div class="col-12 col-xs-12 col-sm-4 col-md-4 offset-sm-4 offset-md-4" style="padding-top: 15px;">
-                    <button mat-flat-button style="width: 100%; background-color: #42a5f5; color: white;"
+                    <button type="button" mat-flat-button style="width: 100%; background-color: #42a5f5; color: white;"
                         (click)="searchRentInfo()">Search</button>
                 </div>
 
