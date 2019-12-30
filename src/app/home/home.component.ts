@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { SearchField } from './searchField.model';
 
 @Component({
   selector: 'app-home',
@@ -21,14 +22,17 @@ export class HomeComponent implements OnInit {
   panelSearchMoreField = false;
   // additional field data for search form
   moreField = [
-    {icon: 'add', value: 'air-condition', select: false},
-    {icon: 'add', value: 'wifi', select: false},
-    {icon: 'add', value: 'pool', select: false},
-    {icon: 'add', value: 'lift', select: false},
-    {icon: 'add', value: 'sea-view', select: false}];
+    { icon: 'add', value: 'air-condition', select: false },
+    { icon: 'add', value: 'wifi', select: false },
+    { icon: 'add', value: 'pool', select: false },
+    { icon: 'add', value: 'lift', select: false },
+    { icon: 'add', value: 'sea-view', select: false }];
   choseField: string[] = [];                  // chosen field data from search form
+  searchKey: SearchField;
 
-  constructor() { }
+  constructor() {
+    this.searchKey = new SearchField();
+  }
 
   ngOnInit() {
   }
@@ -67,10 +71,19 @@ export class HomeComponent implements OnInit {
   searchRentInfo(): void {
     // check if Price is valid
     if (this.validatePrice()) {
-      // clear the Error Message
+      // if valid, clear the Error Message
       this.errorMessage = '';
 
-      console.log(this.txtKey + ' : ' + this.errorMessage);
+      // add data to search Key for searching rent information
+      // addKeyValue([value], [key])
+      this.addKeyValue(this.txtKey, 'keyword');
+      this.addKeyValue(this.txtPrice, 'price');
+      this.addKeyValue(this.txtCity, 'city');
+      this.addKeyValue(this.txtTownship, 'township');
+      this.addKeyValue(this.txtCountry, 'country');
+      this.addKeyValue(this.choseField, 'choseField');
+
+      console.log(this.searchKey);
     }
   }
 
@@ -103,6 +116,43 @@ export class HomeComponent implements OnInit {
     }
 
     console.log(this.choseField);
+  }
+
+  addKeyValue(value: any, key: string) {
+    // if value is inputted
+    if (value) {
+      // check key, and Add value
+      switch (key) {
+        // if key is keyword
+        case 'keyword': this.searchKey.keyword = value; break;
+        // if key is price
+        case 'price': this.searchKey.price = +value; break;
+        // if key is city
+        case 'city': this.searchKey.city = value; break;
+        // if key is township
+        case 'township': this.searchKey.township = value; break;
+        // if key is country
+        case 'country': this.searchKey.country = value; break;
+        // if key is moreField
+        case 'choseField': this.searchKey.fieldValue = value; break;
+      }
+    } else {      // if no value is inputted
+      // check key, and Add null value
+      switch (key) {
+        // if key is keyword
+        case 'keyword': this.searchKey.keyword = null; break;
+        // if key is price
+        case 'price': this.searchKey.price = 0; break;
+        // if key is city
+        case 'city': this.searchKey.city = null; break;
+        // if key is township
+        case 'township': this.searchKey.township = null; break;
+        // if key is country
+        case 'country': this.searchKey.country = null; break;
+        // if key is moreField
+        case 'choseField': this.searchKey.fieldValue = []; break;
+      }
+    }
   }
 
 }
