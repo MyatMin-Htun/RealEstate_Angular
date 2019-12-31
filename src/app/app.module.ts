@@ -16,7 +16,8 @@ import {
   MatInputModule,
   MatButtonModule,
   MatExpansionModule,
-  MatChipsModule
+  MatChipsModule,
+  MatCardModule
 } from '@angular/material';
 
 @NgModule({
@@ -38,7 +39,8 @@ import {
     MatInputModule,
     MatButtonModule,
     MatExpansionModule,
-    MatChipsModule
+    MatChipsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
