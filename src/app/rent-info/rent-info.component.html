@@ -41,8 +41,22 @@
                     <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
                 </mat-card-header>
                 <img mat-card-image [src]="dummyPic" style="height: 250px;" alt="Photo card">
-                <mat-card-content>
+                <mat-card-subtitle style="color: black;">
                     <div class="row">
+                        <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <h6 style="padding-top: 10px;">Address</h6>
+                        </div>
+                        <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <button style="width: 100%; background-color: chartreuse; color: cornflowerblue;"
+                                type="button" mat-button (click)="addSendMe(item)">
+                                <i class="material-icons" style="font-size: 20px;">
+                                    bubble_chart
+                                </i>&nbsp;Select</button>
+                        </div>
+                    </div>
+                </mat-card-subtitle>
+                <mat-card-content>
+                    <!-- <div class="row">
                         <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <h6 style="padding-top: 10px;">Address</h6>
                         </div>
@@ -53,7 +67,7 @@
                                     bubble_chart
                                 </i>&nbsp;Select</button>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <p>
                             {{item.address}}

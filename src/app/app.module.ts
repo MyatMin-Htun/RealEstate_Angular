@@ -19,6 +19,7 @@ import {
   MatChipsModule,
   MatCardModule
 } from '@angular/material';
+import { Cart } from '../app/common/cart';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import {
     MatChipsModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [Cart],              // add [Cart] provider for use globally Cart object array
   bootstrap: [AppComponent]
 })
 export class AppModule { }
