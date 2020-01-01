@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { CartItem } from './cartItem';
 
 @Injectable()
 export class Cart {
-    // object array for cart item
-    cart = [
-        { id: 0, key: 'default', price: 200, address: 'default' }
-    ];
+
+    // object array with [cartItem]
+    cart: CartItem[] = [];
 }
