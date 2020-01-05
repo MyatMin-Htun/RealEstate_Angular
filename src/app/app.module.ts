@@ -17,7 +17,8 @@ import {
   MatButtonModule,
   MatExpansionModule,
   MatChipsModule,
-  MatCardModule
+  MatCardModule,
+  MatBadgeModule
 } from '@angular/material';
 import { Cart } from '../app/common/cart';
 
@@ -41,7 +42,8 @@ import { Cart } from '../app/common/cart';
     MatButtonModule,
     MatExpansionModule,
     MatChipsModule,
-    MatCardModule
+    MatCardModule,
+    MatBadgeModule
   ],
   providers: [Cart],              // add [Cart] provider for use globally Cart object array
   bootstrap: [AppComponent]

@@ -14,8 +14,8 @@ export class Cart {
 
     // update Item to [cart] Object array
     updateItem(data: CartItem) {
-        // find if chosen field value exists in [cart]
-      const index: number = this.cart.indexOf(data);
+        // find if chosen field id exists in [cart.id]
+      const index: number = this.cart.findIndex(indexID => indexID.id === data.id);
       // if exists
       if (index !== -1) {
         // discard item from [cart]

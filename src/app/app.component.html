@@ -13,7 +13,7 @@
     <nav mat-tab-nav-bar style="border: none;">
       <a class="col-4 col-xs-4 col-sm-4 col-md-3" mat-tab-link *ngFor="let link of navLink" [routerLink]="link.link"
         routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" style="text-decoration: none;">
-        {{link.label}}
+        {{link.label}}<span [matBadge]="globalCart.cart.length" matBadgeOverlap="false" [matBadgeHidden]="!globalCart.cart.length || link.label !== 'Send Me'">&nbsp;</span>
       </a>
     </nav>
   </div>

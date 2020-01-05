@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { Cart } from '../app/common/cart';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
   // index for selected tab_bar
   activeLinkIndex = 0;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private globalCart: Cart) {
     // set navigation link
     this.navLink = [
       {
@@ -38,5 +39,6 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe((res) => {
       this.activeLinkIndex = this.navLink.indexOf(this.navLink.find(tab => tab.link === '.' + this.router.url));
     });
+    const num = this.globalCart.cart.length;
   }
 }
